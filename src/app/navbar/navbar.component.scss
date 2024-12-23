@@ -1,0 +1,62 @@
+/* src/app/navbar/navbar.component.scss */
+
+.navbar {
+    display: flex; /* Use flexbox to layout the navbar */
+    justify-content: space-between; /* Space out the logo and the links */
+    align-items: center; /* Vertically center the navbar items */
+    padding: 1rem 2rem; /* Add padding around the navbar */
+    background-color: #333; /* Dark background color */
+    color: white; /* Text color */
+    position: fixed; /* Keep the navbar fixed at the top */
+    width: 100%; /* Make the navbar full width */
+    top: 0;
+    left: 0; /* Ensure it starts from the left edge */
+    right: 0; /* Ensure it stretches all the way to the right */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    z-index: 1000; /* Ensure the navbar is above other content */
+    overflow: hidden; /* Prevent content from overflowing */
+  }
+  
+  .navbar .logo a {
+    color: white; /* Color of the logo text */
+    font-size: 1.5rem; /* Logo text size */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .navbar .nav-links {
+    display: flex; /* Layout links horizontally */
+    gap: 1.5rem; /* Space between each link */
+  }
+  
+  .navbar .nav-links a {
+    color: white; /* Text color for links */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 1rem;
+    padding: 0.5rem; /* Add padding around the link text */
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  }
+  
+  .navbar .nav-links a:hover {
+    background-color: #555; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+  }
+  
+  .navbar .nav-links .active {
+    background-color: #f90; /* Highlight active link with an orange color */
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column; /* Stack navbar items vertically on small screens */
+      padding: 1rem; /* Reduce padding */
+    }
+  
+    .navbar .nav-links {
+      flex-direction: column; /* Stack links vertically */
+      gap: 1rem; /* Add space between links */
+      align-items: center; /* Center align the links */
+    }
+  }
+  
