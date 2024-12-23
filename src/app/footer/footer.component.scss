@@ -1,0 +1,35 @@
+.cta-footer {
+    background-color: #333; /* Dark footer background */
+    color: white; /* White text */
+    text-align: center; /* Center align content */
+    padding: 2rem 1rem; /* Add padding */
+    border-top: 5px solid #f90; /* Highlight border */
+    position: relative; /* Ensure proper positioning */
+  }
+  
+  .cta-footer h3 {
+    font-size: 1.8rem; /* Emphasize the heading */
+    margin-bottom: 1rem; /* Add spacing */
+  }
+  
+  .cta-footer p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem; /* Add spacing */
+  }
+  
+  .cta-footer .cta-button {
+    background-color: #f90; /* Call-to-action color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cta-footer .cta-button:hover {
+    background-color: #ffa733;
+    transform: scale(1.05);
+  }
+  
