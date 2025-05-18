@@ -1,1 +1,58 @@
-<p>contact works!</p>
+<section class="contact-form">
+    <h1 class="contact-title">Contact Me</h1>
+    
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+      <!-- Name Field -->
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          [(ngModel)]="contactModel.name"
+          name="name"
+          required
+        />
+      </div>
+  
+      <!-- Email Field -->
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          [(ngModel)]="contactModel.email"
+          name="email"
+          required
+        />
+      </div>
+  
+      <!-- Message Field -->
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea
+          id="message"
+          class="form-control"
+          [(ngModel)]="contactModel.message"
+          name="message"
+          required
+        ></textarea>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-submit" [disabled]="!contactForm.form.valid">
+        Send Message
+      </button>
+    </form>
+  
+    <!-- Success/Error Message -->
+    <div *ngIf="formStatus" class="form-status">
+      <p [ngClass]="{'success': formStatus.success, 'error': !formStatus.success}">
+        {{ formStatus.message }}
+      </p>
+    </div>
+  </section>
+  
+  <app-footer></app-footer>
+  

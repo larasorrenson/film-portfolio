@@ -1,35 +1,45 @@
 .cta-footer {
-    background-color: #333; /* Dark footer background */
-    color: white; /* White text */
-    text-align: center; /* Center align content */
-    padding: 2rem 1rem; /* Add padding */
-    border-top: 5px solid #f90; /* Highlight border */
-    position: relative; /* Ensure proper positioning */
-  }
-  
-  .cta-footer h3 {
-    font-size: 1.8rem; /* Emphasize the heading */
-    margin-bottom: 1rem; /* Add spacing */
-  }
-  
-  .cta-footer p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem; /* Add spacing */
-  }
-  
-  .cta-footer .cta-button {
-    background-color: #f90; /* Call-to-action color */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .cta-footer .cta-button:hover {
-    background-color: #ffa733;
-    transform: scale(1.05);
-  }
-  
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 5px solid #f90;
+}
+
+.cta-button {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  padding: 1rem 2rem;
+  background-color: #f90;
+  color: white;  /* White text color */
+  font-size: 1.25rem;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ffa733;
+  transform: scale(1.05);
+}
+
+.button-text {
+  position: relative;
+  z-index: 10;
+  mix-blend-mode: difference;
+  color: white;  /* White text color */
+}
+
+.spotlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5rem;
+  height: 5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}

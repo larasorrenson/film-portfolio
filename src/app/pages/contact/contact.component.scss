@@ -1,0 +1,161 @@
+/* Styling for the Contact Form */
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #2c3e50; /* Dark background */
+    padding: 30px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f39c12; /* Accent color */
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    font-size: 1.2rem;
+    color: #f39c12;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #34495e; /* Dark input fields */
+    color: white;
+    border: 1px solid #7f8c8d;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: #f39c12;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2rem;
+    background-color: #f39c12; /* Accent color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:disabled {
+    background-color: #7f8c8d;
+    cursor: not-allowed;
+  }
+  
+  .form-status {
+    margin-top: 20px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .success {
+    color: #2ecc71;
+    animation: slideIn 0.5s ease-in;
+  }
+  
+  .error {
+    color: #e74c3c;
+    animation: slideIn 0.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Success and Error animation */
+  input.ng-touched.ng-valid {
+    border-color: #28a745; /* Green for valid input */
+    animation: success-animation 0.5s ease-out;
+  }
+  
+  input.ng-touched.ng-invalid {
+    border-color: #dc3545; /* Red for invalid input */
+    animation: error-animation 0.5s ease-out;
+  }
+  
+  @keyframes success-animation {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes error-animation {
+    0% {
+      transform: shake(0);
+    }
+    25% {
+      transform: shake(5px);
+    }
+    50% {
+      transform: shake(-5px);
+    }
+    100% {
+      transform: shake(0);
+    }
+  }
+  
+  /* Ripple effect on focus */
+  input:focus::after,
+  textarea:focus::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: rgba(255, 150, 0, 0.3);
+    border-radius: 50%;
+    animation: ripple-animation 0.6s ease-out;
+  }
+  
+  @keyframes ripple-animation {
+    0% {
+      transform: scale(0);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+  
