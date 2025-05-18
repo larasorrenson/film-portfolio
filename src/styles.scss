@@ -7,7 +7,6 @@ body {
   
   main {
     margin-top: 50px; /* Default value for margin-top for larger screens */
-    padding: 20px; /* Add some padding for spacing around content */
     background-color:#555;
   }
   
@@ -55,7 +54,7 @@ body {
   }
   
   .navbar .nav-links .active {
-    background-color: #f90;
+    background-color: rgb(3, 119, 18);
   }
   
   /* Mobile responsiveness */

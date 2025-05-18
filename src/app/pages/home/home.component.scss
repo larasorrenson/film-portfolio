@@ -1,174 +1,110 @@
 .home-container {
-  padding: 2rem;
-  background-color: #f5f5f5;
-}
-
-h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.showreel {
-  margin-bottom: 2rem;
-  text-align: center;
-  position: relative;
-}
-
-.video-container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
-  transition: transform 0.5s ease-in-out; /* Smooth zoom transition */
-  overflow: hidden;
-  position: relative;
-  width: 560px; /* Standard YouTube video width */
-  height: 315px; /* Standard YouTube video height */
-}
-
-.video-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none; /* Clean borders */
-}
-
-@media (max-width: 768px) {
-  .video-container {
-    width: 100%;
-    height: auto; /* Maintain aspect ratio for mobile */
-  }
-}
-
-
-.hero-section {
-  background: linear-gradient(to bottom, #000, #333);
+  background-color: #111; // Sleek dark background
   color: white;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
   text-align: center;
   padding: 4rem 2rem;
-  height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .hero-content h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 300;
   margin-bottom: 1rem;
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
+/* Showreel Video */
+.showreel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem 0;
 
-.carousel-section {
-  padding: 3rem 1rem;
-  background-color: #f5f5f5;
+  iframe {
+    width: 100%;
+    max-width: 1200px; // Increased max width
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  }
+}
+
+
+.highlights-section {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 3rem 0;
 
   h2 {
-    margin-bottom: 1.5rem;
     font-size: 2rem;
-    color: #333;
-  }
-
-  .carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 1rem;
-    padding: 1rem 0;
-    scroll-behavior: smooth;
-
-    .carousel-item {
-      flex: 0 0 auto;
-      width: 300px;
-      text-align: center;
-      border-radius: 8px;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-
-      &:hover {
-        transform: scale(1.05);
-      }
-
-      img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-      }
-
-      p {
-        padding: 1rem;
-        font-size: 1rem;
-        color: #333;
-      }
-    }
-  }
-
-  .see-more-button {
-    margin-top: 1rem;
-    background-color: #f90;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-
-    &:hover {
-      background-color: #ffa733;
-      transform: scale(1.05);
-    }
+    font-weight: 300;
+    margin-bottom: 1.5rem;
   }
 }
 
-.photography-carousel {
-  background-color: #e0f7fa; /* Subtle blue for photography section */
-}
-
-.film-carousel {
-  background-color: #fff3e0; /* Subtle orange for film section */
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .carousel {
   display: flex;
   overflow-x: auto;
   gap: 1rem;
-  padding: 1rem 0;
   scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .carousel-item {
   flex: 0 0 auto;
   width: 300px;
-  text-align: center;
-  border-radius: 8px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-  transition: transform 0.3s ease;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
 }
 
-.carousel-item:hover {
-  transform: scale(1.05);
-}
+.carousel-nav {
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
 
-.carousel-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
+  &.left {
+    left: 0;
+  }
 
-.carousel-item p {
-  padding: 1rem;
-  font-size: 1rem;
-  color: #333;
+  &.right {
+    right: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.8rem;
+  }
 }

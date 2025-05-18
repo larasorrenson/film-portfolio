@@ -13,28 +13,32 @@ export class FooterComponent implements AfterViewInit {
   @ViewChild('spanRef') spanRef!: ElementRef<HTMLSpanElement>;
 
   ngAfterViewInit() {
-    const button = this.btnRef.nativeElement;
-    const spotlight = this.spanRef.nativeElement;
+  const button = this.btnRef.nativeElement;
+  const spotlight = this.spanRef.nativeElement;
 
-    const handleMouseMove = (event: MouseEvent) => {
-      const { width } = button.getBoundingClientRect();
-      const offset = event.offsetX;
-      const left = `${(offset / width) * 100}%`;
+  const handleMouseMove = (event: MouseEvent) => {
+    const rect = button.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
 
-      spotlight.animate({ left }, { duration: 250, fill: 'forwards' });
-    };
+    const left = `${(x / rect.width) * 100}%`;
+    const top = `${(y / rect.height) * 100}%`;
 
-    const handleMouseLeave = () => {
-      spotlight.animate({ left: '50%' }, { duration: 100, fill: 'forwards' });
-    };
+    spotlight.animate({ left, top }, { duration: 250, fill: 'forwards' });
+  };
 
-    button.addEventListener('mousemove', handleMouseMove);
-    button.addEventListener('mouseleave', handleMouseLeave);
+  const handleMouseLeave = () => {
+    spotlight.animate({ left: '50%', top: '50%' }, { duration: 100, fill: 'forwards' });
+  };
 
-    // Cleanup listeners on component destroy
-    return () => {
-      button.removeEventListener('mousemove', handleMouseMove);
-      button.removeEventListener('mouseleave', handleMouseLeave);
-    };
-  }
+  button.addEventListener('mousemove', handleMouseMove);
+  button.addEventListener('mouseleave', handleMouseLeave);
+
+  // Cleanup listeners on component destroy
+  return () => {
+    button.removeEventListener('mousemove', handleMouseMove);
+    button.removeEventListener('mouseleave', handleMouseLeave);
+  };
+}
+
 }

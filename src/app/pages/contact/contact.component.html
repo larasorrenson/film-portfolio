@@ -1,58 +1,29 @@
-<section class="contact-form">
-    <h1 class="contact-title">Contact Me</h1>
-    
-    <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
-      <!-- Name Field -->
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input
-          type="text"
-          id="name"
-          class="form-control"
-          [(ngModel)]="contactModel.name"
-          name="name"
-          required
-        />
+<div class="contact-container">
+  <div class="contact-text">
+    <h1>Let's Get in Touch</h1>
+    <p>Send me a message if you'd like to work together or have a question. Please include your name, email, and
+      message.</p>
+  </div>
+
+  <div class="contact-form">
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <input type="text" formControlName="name" placeholder="Your Name" [class.invalid]="isInvalid('name')" />
+      <div class="error" *ngIf="isInvalid('name')">
+        Name is required.
       </div>
-  
-      <!-- Email Field -->
-      <div class="form-group">
-        <label for="email">Your Email</label>
-        <input
-          type="email"
-          id="email"
-          class="form-control"
-          [(ngModel)]="contactModel.email"
-          name="email"
-          required
-        />
+
+      <input type="email" formControlName="email" placeholder="Your Email" [class.invalid]="isInvalid('email')" />
+      <div class="error" *ngIf="isInvalid('email')">
+        A valid email is required.
       </div>
-  
-      <!-- Message Field -->
-      <div class="form-group">
-        <label for="message">Your Message</label>
-        <textarea
-          id="message"
-          class="form-control"
-          [(ngModel)]="contactModel.message"
-          name="message"
-          required
-        ></textarea>
-      </div>
-  
-      <!-- Submit Button -->
-      <button type="submit" class="btn btn-submit" [disabled]="!contactForm.form.valid">
-        Send Message
+
+      <textarea formControlName="message" placeholder="Your Message" [class.invalid]="isInvalid('message')"></textarea>
+
+      <button type="submit" class="cta-button" #contactBtnRef>
+        <span class="button-text">Send Message</span>
+        <span class="spotlight" #contactSpotlightRef></span>
       </button>
     </form>
-  
-    <!-- Success/Error Message -->
-    <div *ngIf="formStatus" class="form-status">
-      <p [ngClass]="{'success': formStatus.success, 'error': !formStatus.success}">
-        {{ formStatus.message }}
-      </p>
-    </div>
-  </section>
-  
-  <app-footer></app-footer>
-  
+
+  </div>
+</div>
