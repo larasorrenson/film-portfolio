@@ -47,10 +47,9 @@
               "outputHashing": "all",
               "optimization": true,
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
-              "buildOptimizer": true
+              "baseHref": "/film-portfolio/"
             },
             "production": {
               "budgets": [
